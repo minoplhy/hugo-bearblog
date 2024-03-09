@@ -16,6 +16,7 @@
   {{ end -}}
 
   {{- partial "style.html" . -}}
+  {{- partial "script.html" . -}}
 
   <!-- A partial to be overwritten by the user.
   Simply place a custom_head.html into
@@ -37,6 +38,7 @@
   <!-- A partial to be overwritten by the user.
   Simply place a custom_body.html into
   your local /layouts/partials-directory -->
+  {{- partial "script_bottom.html" -}}
   {{- partial "custom_body.html" . -}}
 </body>
 
