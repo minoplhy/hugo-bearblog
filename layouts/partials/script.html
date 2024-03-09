@@ -4,13 +4,13 @@
     }
     
     function darkmode() {
-    if (localStorage.getItem('dark-mode') === 'false') {
-        darkmode_enable();
-    } else if (localStorage.getItem('dark-mode') === null) {
-        darkmode_enable();
-    } else {
-        darkmode_disable();
-    }
+        if (localStorage.getItem('dark-mode') === 'false') {
+            darkmode_enable();
+        } else if (localStorage.getItem('dark-mode') === null) {
+            darkmode_enable();
+        } else {
+            darkmode_disable();
+        }
     }
 
     function darkmode_enable()  {
