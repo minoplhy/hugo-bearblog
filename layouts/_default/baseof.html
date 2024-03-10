@@ -15,9 +15,14 @@
   {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
   {{ end -}}
 
-  {{- partial "style.html" . -}}
-  {{- partial "script.html" . -}}
+  {{- /* CSS stylesheet */}}
+  {{- $stylesheet := (resources.Get "css/style.css") | resources.Minify | fingerprint }}
+  <link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}" rel="preload stylesheet" as="style">
 
+  {{- /* Javascript */}}
+  {{- $darkmode_script := (resources.Get "js/darkmode.js") | resources.Minify | fingerprint}}
+  <script defer crossorigin="anonymous" src="{{ $darkmode_script.RelPermalink }}" integrity="{{ $darkmode_script.Data.Integrity }}" async></script>
+  
   <!-- A partial to be overwritten by the user.
   Simply place a custom_head.html into
   your local /layouts/partials-directory -->
@@ -35,10 +40,13 @@
     {{- partial "footer.html" . -}}
   </footer>
 
+  {{- /* Bottom Javascript */}}
+  {{- $darkmode_load_script := (resources.Get "js/darkmode_load.js") | resources.Minify | fingerprint}}
+  <script defer crossorigin="anonymous" src="{{ $darkmode_load_script.RelPermalink }}" integrity="{{ $darkmode_load_script.Data.Integrity }}"></script>
+  
   <!-- A partial to be overwritten by the user.
   Simply place a custom_body.html into
   your local /layouts/partials-directory -->
-  {{- partial "script_bottom.html" -}}
   {{- partial "custom_body.html" . -}}
 </body>
 

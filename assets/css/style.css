@@ -1,5 +1,4 @@
-<style>
-  body {
+body {
     font-family: Verdana, sans-serif;
     margin: auto;
     padding: 20px;
@@ -10,166 +9,164 @@
     overflow-wrap: break-word;
     line-height: 1.5;
     color: #444;
-  }
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  strong,
-  b {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
     color: #222;
-  }
+}
 
-  a {
+a {
     color: #3273dc;
     /*color: #ff5e6c;*/
-  }
+}
 
-  .title {
+.title {
     text-decoration: none;
     border: 0;
-  }
+}
 
-  .title span {
+.title span {
     font-weight: 400;
-  }
+}
 
-  nav a {
+nav a {
     margin-right: 10px;
-  }
+}
 
-  textarea {
+textarea {
     width: 100%;
     font-size: 16px;
-  }
+}
 
-  input {
+input {
     font-size: 16px;
-  }
+}
 
-  content {
+content {
     line-height: 1.6;
-  }
+}
 
-  table {
+table {
     width: 100%;
-  }
+}
 
-  img {
+img {
     max-width: 100%;
-  }
+}
 
-  code {
+code {
     padding: 2px 5px;
     background-color: #f2f2f2;
-  }
+}
 
-  pre code {
+pre code {
     color: #222;
     display: block;
     padding: 20px;
     white-space: pre-wrap;
     font-size: 14px;
     overflow-x: auto;
-  }
+}
 
-  div.highlight pre {
+div.highlight pre {
     background-color: initial;
     color: initial;
-  }
+}
 
-  div.highlight code {
+div.highlight code {
     background-color: unset;
     color: unset;
-  }
+}
 
-  blockquote {
+blockquote {
     border-left: 1px solid #999;
     color: #222;
     padding-left: 20px;
     font-style: italic;
-  }
+}
 
-  footer {
+footer {
     padding: 25px;
     text-align: center;
-  }
+}
 
-  .helptext {
+.helptext {
     color: #777;
     font-size: small;
-  }
+}
 
-  .errorlist {
+.errorlist {
     color: #eba613;
     font-size: small;
-  }
+}
 
-  /* blog posts */
-  ul.blog-posts {
+/* blog posts */
+ul.blog-posts {
     list-style-type: none;
     padding: unset;
-  }
+}
 
-  ul.blog-posts li {
+ul.blog-posts li {
     display: flex;
-  }
+}
 
-  ul.blog-posts li span {
+ul.blog-posts li span {
     flex: 0 0 130px;
-  }
+}
 
-  ul.blog-posts li a:visited {
+ul.blog-posts li a:visited {
     color: #8b6fcb;
-  }
+}
 
-  .blog-link {
+.blog-link {
     text-decoration: none;
-  }
+}
 
-  .dark-mode {
-      background-color: #333;
-      color: #ddd;
-    }
-
-  .dark-mode h1,
-  .dark-mode h2,
-  .dark-mode h3,
-  .dark-mode h4,
-  .dark-mode h5,
-  .dark-mode h6,
-  .dark-mode strong,
-  .dark-mode b {
-    color: #eee;
-  }
-
-  .dark-mode a {
-    color: #8cc2dd;
-  }
-
-  .dark-mode code {
-    background-color: #777;
-  }
-
-  .dark-mode pre code {
+.dark-mode {
+    background-color: #333;
     color: #ddd;
-  }
+}
 
-  .dark-mode blockquote {
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode strong,
+.dark-mode b {
+    color: #eee;
+}
+
+.dark-mode a {
+    color: #8cc2dd;
+}
+
+.dark-mode code {
+    background-color: #777;
+}
+
+.dark-mode pre code {
+    color: #ddd;
+}
+
+.dark-mode blockquote {
     color: #ccc;
-  }
+}
 
-  .dark-mode textarea,
-  .dark-mode input {
+.dark-mode textarea,
+.dark-mode input {
     background-color: #252525;
     color: #ddd;
-  }
+}
 
-  .dark-mode .helptext {
+.dark-mode .helptext {
     color: #aaa;
-  }
-
-</style>
+}

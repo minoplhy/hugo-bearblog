@@ -27,7 +27,10 @@
     {{ end }}
   </ul>
 
-  {{- partial "random_color.html" -}}
+  {{- /* Random Color Script */}}
+  {{- $random_color_script := (resources.Get "js/random_color.js") | resources.Minify | fingerprint}}
+  <script defer crossorigin="anonymous" src="{{ $random_color_script.RelPermalink }}" integrity="{{ $random_color_script.Data.Integrity }}" async></script>
+
 
   {{ if .Data.Singular }}
   {{else}}
