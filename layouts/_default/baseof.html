@@ -49,6 +49,11 @@
   </main>
   <footer>
     {{- partial "footer.html" . -}}
+
+    <!-- A partial to be overwritten by the user.
+    Simply place a custom_footer.html into
+    your local /layouts/partials-directory -->
+    {{- partial "custom_footer.html" -}}
   </footer>
 
   {{- /* Bottom Javascript */}}
