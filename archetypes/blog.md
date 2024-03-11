@@ -1,7 +1,7 @@
 +++
 title = "{{ replace .Name "-" " " | title }}"
 date = "{{ .Date }}"
-lastmod = "{{ .Lastmod }}
+# lastmod = "{{ .Lastmod }}
 
 #
 # description is optional
