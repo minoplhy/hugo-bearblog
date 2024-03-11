@@ -1,7 +1,11 @@
 +++
 title = "{{ replace .Name "-" " " | title }}"
 date = "{{ .Date }}"
-# lastmod = "{{ .Lastmod }}
+
+#
+# lastmod is optional
+#
+# lastmod = "Timestamp that you edit this blog"
 
 #
 # description is optional
