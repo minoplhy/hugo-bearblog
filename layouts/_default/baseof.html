@@ -17,7 +17,7 @@
 
   <!-- External Script, Stylesheet linking -->
   {{- /* CSS stylesheet */}}
-  {{- $stylesheet := (resources.Get "css/style.css") | resources.Minify }}
+  {{- $stylesheet := (resources.Match "css/*.css") | resources.Concat "css/style.css" | resources.Minify }}
   {{- if not site.Params.assets.disableFingerprinting }}
     {{- $stylesheet := $stylesheet | fingerprint }}
     <link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}" rel="preload stylesheet" as="style">
@@ -41,16 +41,6 @@
 </head>
 
 <body>
-  
-  {{- /* Bottom Javascript */}}
-  {{- $darkmode_load_script := (resources.Get "js/darkmode_load.js") | resources.Minify}}
-  {{- if not site.Params.assets.disableFingerprinting }}
-    {{- $darkmode_load_script := $darkmode_load_script | fingerprint }}
-    <script defer crossorigin="anonymous" src="{{ $darkmode_load_script.RelPermalink }}" integrity="{{ $darkmode_load_script.Data.Integrity }}"></script>
-  {{ else }}
-    <script defer crossorigin="anonymous" src="{{ $darkmode_load_script.RelPermalink }}"></script>
-  {{ end }}
-
   <header>
     {{- partial "header.html" . -}}
   </header>
@@ -65,6 +55,15 @@
     your local /layouts/partials-directory -->
     {{- partial "custom_footer.html" -}}
   </footer>
+
+  {{- /* Bottom Javascript */}}
+  {{- $darkmode_load_script := (resources.Get "js/darkmode_load.js") | resources.Minify}}
+  {{- if not site.Params.assets.disableFingerprinting }}
+    {{- $darkmode_load_script := $darkmode_load_script | fingerprint }}
+    <script defer crossorigin="anonymous" src="{{ $darkmode_load_script.RelPermalink }}" integrity="{{ $darkmode_load_script.Data.Integrity }}"></script>
+  {{ else }}
+    <script defer crossorigin="anonymous" src="{{ $darkmode_load_script.RelPermalink }}"></script>
+  {{ end }}
 
   <!-- A partial to be overwritten by the user.
   Simply place a custom_body.html into
