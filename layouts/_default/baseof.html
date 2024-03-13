@@ -29,9 +29,9 @@
   {{- $darkmode_script := (resources.Get "js/darkmode.js") | resources.Minify }}
   {{- if not site.Params.assets.disableFingerprinting }}
     {{- $darkmode_script := $darkmode_script | fingerprint }}
-    <script async crossorigin="anonymous" src="{{ $darkmode_script.RelPermalink }}" integrity="{{ $darkmode_script.Data.Integrity }}"></script>
+    <script crossorigin="anonymous" src="{{ $darkmode_script.RelPermalink }}" integrity="{{ $darkmode_script.Data.Integrity }}"></script>
   {{ else }}
-    <script async crossorigin="anonymous" src="{{ $darkmode_script.RelPermalink }}"></script>
+    <script crossorigin="anonymous" src="{{ $darkmode_script.RelPermalink }}"></script>
   {{ end }}
 
   <!-- A partial to be overwritten by the user.
@@ -61,9 +61,9 @@
   {{- $darkmode_load_script := (resources.Get "js/darkmode_load.js") | resources.Minify}}
   {{- if not site.Params.assets.disableFingerprinting }}
     {{- $darkmode_load_script := $darkmode_load_script | fingerprint }}
-    <script defer crossorigin="anonymous" src="{{ $darkmode_load_script.RelPermalink }}" integrity="{{ $darkmode_load_script.Data.Integrity }}"></script>
+    <script crossorigin="anonymous" src="{{ $darkmode_load_script.RelPermalink }}" integrity="{{ $darkmode_load_script.Data.Integrity }}"></script>
   {{ else }}
-    <script defer crossorigin="anonymous" src="{{ $darkmode_load_script.RelPermalink }}"></script>
+    <script crossorigin="anonymous" src="{{ $darkmode_load_script.RelPermalink }}"></script>
   {{ end }}
 
   <!-- A partial to be overwritten by the user.
