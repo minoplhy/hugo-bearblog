@@ -1,3 +1,4 @@
+/* Main darkmode script here */
 function darkmode() {
     if (localStorage.getItem('dark-mode') === 'false') {
         darkmode_enable();

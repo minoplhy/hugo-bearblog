@@ -1,3 +1,4 @@
+/* random text color on blog listing */
 const links = document.querySelectorAll('.random-color');
 
 // To avoid too bright and too dark color being generated
