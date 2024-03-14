@@ -63,6 +63,15 @@
   Simply place a custom_body.html into
   your local /layouts/partials-directory -->
   {{- partial "custom_body.html" . -}}
+
+  {{- /* Onclick Javascript */}}
+  {{- $darkmode_onclick := (resources.Get "js/darkmode_click.js") | resources.Minify }}
+  {{- if not site.Params.assets.disableFingerprinting }}
+    {{- $darkmode_onclick := $darkmode_onclick | fingerprint }}
+    <script crossorigin="anonymous" src="{{ $darkmode_onclick.RelPermalink }}" integrity="{{ $darkmode_onclick.Data.Integrity }}"></script>
+  {{ else }}
+    <script crossorigin="anonymous" src="{{ $darkmode_onclick.RelPermalink }}"></script>
+  {{ end }}
 </body>
 
 </html>

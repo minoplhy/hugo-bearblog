@@ -1,7 +1,3 @@
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.getItem('dark-mode') === null) {
-    localStorage.setItem('dark-mode', 'true');
-}
-
 function darkmode() {
     if (localStorage.getItem('dark-mode') === 'false') {
         darkmode_enable();
@@ -20,4 +16,8 @@ function darkmode_enable()  {
 function darkmode_disable() {
     document.body.classList.remove("dark-mode");
     localStorage.setItem('dark-mode', 'false');
+}
+
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.getItem('dark-mode') === null) {
+    localStorage.setItem('dark-mode', 'true');
 }
