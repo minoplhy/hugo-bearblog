@@ -22,3 +22,7 @@ function darkmode_disable() {
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.getItem('dark-mode') === null) {
     localStorage.setItem('dark-mode', 'true');
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("dark-mode-button").addEventListener("click", darkmode);
+});
