@@ -1,4 +1,19 @@
-<a href="{{ "" | relURL }}" class="title">
-  <h2>{{ .Site.Title }}</h2>
-</a>
-<nav>{{- partial "nav.html" . -}}</nav>
+<div class="title-container">
+  {{ if .Site.Params.TitleImage }}
+  <a href="{{ "" | relURL }}" class="image-link">
+    <img
+      src="{{ .Site.Params.TitleImage }}"
+      alt="{{ .Site.Title }} logo"
+      class="title-image"
+    >
+  </a>
+  {{ end }}
+
+  <a href="{{ "" | relURL }}" class="title">
+    <h2>{{ .Site.Title }}</h2>
+  </a>
+</div>
+
+<nav class="centered-nav">
+  {{ partial "nav.html" . }}
+</nav>

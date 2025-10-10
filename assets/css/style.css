@@ -171,3 +171,74 @@ ul.blog-posts li a:visited {
 .dark-mode .helptext {
     color: #aaa;
 }
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  position: relative;
+  z-index: 0;
+
+  margin-bottom: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+/* Rotate image and allow overlap */
+.image-link {
+  display: block;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform: rotate(-20deg);
+  margin-right: -30px; /* overlap into text */
+  z-index: 1;
+}
+
+/* Ensure rotated image doesn't collapse container space */
+.image-link::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  bottom: -20px;
+  left: -20px;
+  right: -20px;
+  pointer-events: none;
+}
+
+.title-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Text above image if overlapped */
+.title {
+  text-decoration: none;
+  color: #210000;
+  position: relative;
+  z-index: 2;
+}
+
+.title h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.1em;
+  line-height: 1.1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .image-link {
+    width: 100px;
+    height: 100px;
+    transform: rotate(-15deg);
+    margin-right: -20px;
+  }
+
+  .title h2 {
+    font-size: 2rem;
+  }
+}
